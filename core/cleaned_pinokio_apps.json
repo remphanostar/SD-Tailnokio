@@ -1,0 +1,122 @@
+{
+  "stable-diffusion-webui": {
+    "name": "Stable Diffusion WebUI",
+    "description": "A web interface for Stable Diffusion, allowing easy image generation with various models and settings.",
+    "category": "Image Generation",
+    "repo_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "tags": ["AI", "Image Generation", "Stable Diffusion", "WebUI"],
+    "vram": 4096,
+    "install_script": "install.js",
+    "run_script": "webui.py",
+    "dependencies": ["torch", "torchvision", "transformers"],
+    "webui_type": "gradio"
+  },
+  "comfyui": {
+    "name": "ComfyUI",
+    "description": "A powerful and modular stable diffusion GUI with a graph/nodes interface.",
+    "category": "Image Generation",
+    "repo_url": "https://github.com/comfyanonymous/ComfyUI",
+    "tags": ["AI", "Image Generation", "Stable Diffusion", "Node-based"],
+    "vram": 4096,
+    "install_script": "install.py",
+    "run_script": "main.py",
+    "dependencies": ["torch", "torchvision", "numpy"],
+    "webui_type": "custom"
+  },
+  "text-generation-webui": {
+    "name": "Text Generation WebUI",
+    "description": "A gradio web UI for running Large Language Models with various features and model support.",
+    "category": "Text Generation",
+    "repo_url": "https://github.com/oobabooga/text-generation-webui",
+    "tags": ["AI", "LLM", "Text Generation", "Gradio"],
+    "vram": 8192,
+    "install_script": "setup.py",
+    "run_script": "server.py",
+    "dependencies": ["transformers", "accelerate", "gradio"],
+    "webui_type": "gradio"
+  },
+  "koboldai": {
+    "name": "KoboldAI",
+    "description": "A browser-based front-end for AI-assisted writing with multiple AI backends.",
+    "category": "Text Generation",
+    "repo_url": "https://github.com/KoboldAI/KoboldAI-Client",
+    "tags": ["AI", "LLM", "Text Generation", "Writing Assistant"],
+    "vram": 4096,
+    "install_script": "install.sh",
+    "run_script": "KoboldAI.py",
+    "dependencies": ["torch", "transformers", "flask"],
+    "webui_type": "flask"
+  },
+  "automatic-speech-recognition": {
+    "name": "Automatic Speech Recognition",
+    "description": "Open-source speech recognition toolkit based on Baidu's Deep Speech research.",
+    "category": "Audio Processing",
+    "repo_url": "https://github.com/SeanNaren/deepspeech.pytorch",
+    "tags": ["AI", "Speech Recognition", "Audio Processing"],
+    "vram": 2048,
+    "install_script": "setup.py",
+    "run_script": "train.py",
+    "dependencies": ["torch", "torchaudio", "numpy"],
+    "webui_type": "none"
+  },
+  "rvc": {
+    "name": "RVC (Retrieval-based Voice Conversion)",
+    "description": "An easy-to-use voice conversion framework based on VITS.",
+    "category": "Audio Processing",
+    "repo_url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+    "tags": ["AI", "Voice Conversion", "Audio Processing"],
+    "vram": 2048,
+    "install_script": "install.py",
+    "run_script": "webui.py",
+    "dependencies": ["torch", "torchaudio", "gradio"],
+    "webui_type": "gradio"
+  },
+  "yolov5": {
+    "name": "YOLOv5",
+    "description": "Ultralytics YOLOv5 is a family of object detection architectures and models pretrained on the COCO dataset.",
+    "category": "Computer Vision",
+    "repo_url": "https://github.com/ultralytics/yolov5",
+    "tags": ["AI", "Object Detection", "Computer Vision", "YOLO"],
+    "vram": 2048,
+    "install_script": "requirements.txt",
+    "run_script": "detect.py",
+    "dependencies": ["torch", "torchvision", "numpy"],
+    "webui_type": "none"
+  },
+  "segment-anything": {
+    "name": "Segment Anything",
+    "description": "The Segment Anything Model (SAM) produces high quality object masks from input prompts.",
+    "category": "Computer Vision",
+    "repo_url": "https://github.com/facebookresearch/segment-anything",
+    "tags": ["AI", "Image Segmentation", "Computer Vision", "Meta"],
+    "vram": 4096,
+    "install_script": "setup.py",
+    "run_script": "demo.py",
+    "dependencies": ["torch", "torchvision", "numpy"],
+    "webui_type": "none"
+  },
+  "code-llama": {
+    "name": "Code Llama",
+    "description": "Code Llama is a family of large language models for code based on Llama 2.",
+    "category": "Code Generation",
+    "repo_url": "https://github.com/facebookresearch/codellama",
+    "tags": ["AI", "Code Generation", "LLM", "Meta"],
+    "vram": 8192,
+    "install_script": "setup.py",
+    "run_script": "chat.py",
+    "dependencies": ["torch", "transformers", "accelerate"],
+    "webui_type": "none"
+  },
+  "open-interpreter": {
+    "name": "Open Interpreter",
+    "description": "Open Interpreter lets LLMs run code (Python, Javascript, Shell, and more) locally.",
+    "category": "Development Tools",
+    "repo_url": "https://github.com/OpenInterpreter/open-interpreter",
+    "tags": ["AI", "Code Execution", "Development Tools"],
+    "vram": 4096,
+    "install_script": "setup.py",
+    "run_script": "interpreter.py",
+    "dependencies": ["openai", "tiktoken", "rich"],
+    "webui_type": "none"
+  }
+}
