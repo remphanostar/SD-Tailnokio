@@ -27,7 +27,13 @@ exec(open('SD_PINNOKIO_SIMPLE_INTERFACE.py').read())
 
 ### Google Colab
 ```python
-# Colab-specific integration
+# Option 1: Complete Colab notebook (Recommended)
+# Download and run: SD_TAILNOKIO_COLAB_SETUP.ipynb
+
+# Option 2: Simplified Colab script (Copy & Paste)
+# Copy and run: SD_TAILNOKIO_COLAB_SIMPLE.py
+
+# Option 3: Direct Colab integration
 %run colab_integration.py
 ```
 
@@ -45,6 +51,8 @@ SD-Tailnokio/
 ├── SD_PINNOKIO_SIMPLE_INTERFACE.py         # Simplified Python interface
 ├── notebook-integration.py                 # Comprehensive integration script (Recommended)
 ├── colab_integration.py                    # Google Colab specific integration
+├── SD_TAILNOKIO_COLAB_SETUP.ipynb          # Complete Colab setup notebook
+├── SD_TAILNOKIO_COLAB_SIMPLE.py            # Simplified Colab setup script
 ├── test-integration.py                     # Test script for verification
 ├── NOTEBOOK_INTEGRATION_GUIDE.md          # Detailed integration guide
 ├── requirements.txt                        # Python dependencies
@@ -70,6 +78,8 @@ SD-Tailnokio/
 - **SD_PINNOKIO_SIMPLE_INTERFACE.py**: Lightweight interface for any Python environment
 - **notebook-integration.py**: Production-ready integration with web interface and tunnel support (Recommended)
 - **colab_integration.py**: Optimized for Google Colab environment
+- **SD_TAILNOKIO_COLAB_SETUP.ipynb**: Complete Colab setup notebook with multiple launch options
+- **SD_TAILNOKIO_COLAB_SIMPLE.py**: Simplified Colab script that can be copied and pasted
 - **test-integration.py**: Comprehensive testing script for verification
 
 ### 2. Core Implementation (core/)
@@ -106,6 +116,20 @@ SD-Tailnokio/
 # - One-click install/run functionality
 # - Real-time status monitoring
 # - Public tunnel with QR code
+```
+
+### Google Colab Quick Start
+```python
+# Option 1: Complete Colab notebook (Recommended)
+# Download SD_TAILNOKIO_COLAB_SETUP.ipynb and run it in Colab
+# It includes 5 different launch options and automatic setup
+
+# Option 2: Copy & Paste script
+# Copy the contents of SD_TAILNOKIO_COLAB_SIMPLE.py
+# Paste it into a Colab cell and run
+
+# Option 3: Direct integration
+%run colab_integration.py
 ```
 
 ### Advanced Features (Direct API Usage)
