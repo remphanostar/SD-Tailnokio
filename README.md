@@ -21,7 +21,7 @@ A clean, up-to-date repository with notebook interface for SD-Pinnokio integrati
 # Option 2: Simplified Python Interface
 exec(open('SD_PINNOKIO_SIMPLE_INTERFACE.py').read())
 
-# Option 3: Comprehensive Integration Script
+# Option 3: Comprehensive Integration Script (Recommended)
 %run notebook-integration.py
 ```
 
@@ -31,26 +31,36 @@ exec(open('SD_PINNOKIO_SIMPLE_INTERFACE.py').read())
 %run colab_integration.py
 ```
 
+### Testing Your Installation
+```python
+# Run the test script to verify everything works
+%run test-integration.py
+```
+
 ## Repository Structure
 
 ```
 SD-Tailnokio/
 ├── SD_PINNOKIO_NOTEBOOK_INTERFACE.ipynb    # Complete Jupyter notebook interface
 ├── SD_PINNOKIO_SIMPLE_INTERFACE.py         # Simplified Python interface
-├── notebook-integration.py                 # Comprehensive integration script
+├── notebook-integration.py                 # Comprehensive integration script (Recommended)
 ├── colab_integration.py                    # Google Colab specific integration
+├── test-integration.py                     # Test script for verification
 ├── NOTEBOOK_INTEGRATION_GUIDE.md          # Detailed integration guide
-├── github_repo/                           # Core 12-phase implementation
-│   ├── cloud_detection/                   # Phase 1: Cloud platform detection
-│   │   └── cloud_detector.py
-│   ├── environment_management/            # Phase 2: Environment management
-│   │   └── shell_runner.py
-│   ├── app_database.py                    # Phase 3: Application database
-│   ├── app_manager.py                     # Phase 5: Application engine
-│   ├── tunneling/                         # Phase 7: Tunnel management
-│   │   └── cloudflare_manager.py
-│   └── cleaned_pinokio_apps.json         # Application library (280+ apps)
-└── README.md                             # This file
+├── requirements.txt                        # Python dependencies
+├── core/                                  # Core implementation
+│   ├── app_database.py                    # Application database management
+│   ├── app_manager.py                     # Application installation/execution engine
+│   ├── cleaned_pinokio_apps.json         # 280+ AI applications library
+│   ├── cloud_detection/
+│   │   └── cloud_detector.py              # Cloud platform detection
+│   ├── environment_management/
+│   │   └── shell_runner.py                # Enhanced shell command execution
+│   └── tunneling/
+│       └── cloudflare_manager.py          # Enterprise tunnel management
+├── README.md                             # This file
+├── LICENSE                               # MIT License
+└── .gitignore                            # Python/.gitignore file
 ```
 
 ## Key Components
@@ -58,10 +68,11 @@ SD-Tailnokio/
 ### 1. Notebook Interfaces
 - **SD_PINNOKIO_NOTEBOOK_INTERFACE.ipynb**: Complete ipywidgets interface with full functionality
 - **SD_PINNOKIO_SIMPLE_INTERFACE.py**: Lightweight interface for any Python environment
-- **notebook-integration.py**: Production-ready integration with multiple tunnel options
+- **notebook-integration.py**: Production-ready integration with web interface and tunnel support (Recommended)
 - **colab_integration.py**: Optimized for Google Colab environment
+- **test-integration.py**: Comprehensive testing script for verification
 
-### 2. Core Implementation (github_repo/)
+### 2. Core Implementation (core/)
 - **cloud_detector.py**: Detects cloud platforms and environments
 - **shell_runner.py**: Enhanced shell command execution with output capture
 - **app_database.py**: Manages application metadata and state
@@ -77,39 +88,56 @@ SD-Tailnokio/
 
 ## Usage Examples
 
-### Basic Application Management
+### Testing Your Setup
 ```python
-# Initialize the interface
-interface = NotebookInterface()
+# First, test that everything works
+%run test-integration.py
 
-# Browse available applications
-apps = interface.get_apps()
-print(f"Available applications: {len(apps)}")
-
-# Install an application
-interface.install_app("stable-diffusion-webui")
-
-# Run the application
-interface.run_app("stable-diffusion-webui")
-
-# Create tunnel for external access
-tunnel_url = interface.create_tunnel("cloudflare")
-print(f"Tunnel URL: {tunnel_url}")
+# If all tests pass, proceed with the interface
 ```
 
-### Advanced Features
+### Basic Application Management
 ```python
+# Initialize the interface (Recommended approach)
+%run notebook-integration.py
+
+# The web interface will automatically open with:
+# - Application browser and search
+# - One-click install/run functionality
+# - Real-time status monitoring
+# - Public tunnel with QR code
+```
+
+### Advanced Features (Direct API Usage)
+```python
+# For advanced users who want direct API access
+from core.app_database import AppDatabase
+from core.app_manager import AppManager
+from core.environment_management.shell_runner import ShellRunner
+
+# Initialize components
+shell_runner = ShellRunner()
+app_database = AppDatabase()
+app_manager = AppManager(shell_runner, app_database)
+
+# Browse available applications
+apps = app_database.get_all_apps()
+print(f"Available applications: {len(apps)}")
+
 # Search applications
-search_results = interface.search_apps("text to image")
+search_results = app_database.search_apps("text to image")
 
 # Filter by category
-category_apps = interface.get_apps_by_category("Image Generation")
+category_apps = app_database.get_apps_by_category("Image Generation")
+
+# Install an application
+success = app_manager.install_app("stable-diffusion-webui")
+
+# Run the application
+success = app_manager.run_app("stable-diffusion-webui")
 
 # Monitor process status
-status = interface.get_process_status("stable-diffusion-webui")
-
-# Generate QR code for mobile access
-qr_code = interface.generate_qr_code(tunnel_url)
+status = app_manager.get_process_status("stable-diffusion-webui")
 ```
 
 ## System Requirements
@@ -118,6 +146,22 @@ qr_code = interface.generate_qr_code(tunnel_url)
 - Jupyter Notebook/Lab (for notebook interfaces)
 - Internet connection for application downloads
 - Cloud platform account (for tunnel services)
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/remphanostar/SD-Tailnokio.git
+cd SD-Tailnokio
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Quick Verification
+```python
+# In Jupyter/Colab, run the test script
+%run test-integration.py
+```
 
 ## Supported Platforms
 
